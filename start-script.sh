@@ -4,5 +4,5 @@ az aks get-credentials --resource-group Calico-AKS-Resourcegroup --name Calico-A
 kubectl create -f ./tigera-operator.yaml && \
 kubectl create -f ./tigera-operator-installation.yaml && \
 kubectl apply -f ./yaobank-org.yaml && \
-kubectl apply -f yoabank-loadbalancer.yaml && \
+kubectl apply -f ./yoabank-loadbalancer.yaml && \
 kubectl get svc -n yaobank-customer yaobank-customer -w

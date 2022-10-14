@@ -1,5 +1,16 @@
 # Calico-AKS-BYOCNI
-Install Calico on AKS cluster with Bring Your Own CNI 
+Install Calico on [Azure](https://learn.microsoft.com/en-us/azure/) AKS cluster with Bring Your Own CNI setup.
+
+## Calico Open Source
+Calico Open Source is a networking and security solution for containers, virtual machines, and native host-based workloads. It supports a broad range of platforms including Kubernetes, OpenShift, Docker EE, OpenStack, and bare metal services.
+
+Whether you opt to use Calico’s eBPF data plane, Linux’s standard networking pipeline, or the Windows data plane, Calico delivers blazing-fast performance with true cloud-native scalability. Calico provides developers and cluster operators with a consistent experience and set of capabilities whether running in public cloud or on-premises, or on a single node or across a multi-thousand node cluster.
+
+![alt text](./Calico-Open-Source-diagram-02.png "Calico Architecture")
+
+More information about [Tigera Calico website](https://www.tigera.io/tigera-products/calico/) 
+
+This reposetory is setup for a Workshop purpuse and demsotrates how to install Calico on Azure [AKS with Bring Your Own CNI](https://learn.microsoft.com/en-us/azure/aks/use-byo-cni) setup. 
 
 There are two methods to execute the steps to starup and clean up your AKS installation.
 

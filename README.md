@@ -4,6 +4,7 @@ Install Calico on AKS cluster with Bring Your Own CNI
 There are two methods to execute the steps to starup and clean up your AKS installation.
 
 ## Method 1
+Clone and execute bash script
 
 ### Clone this reposetory and cd into the folder
 ```
@@ -27,6 +28,9 @@ chmod +x *.sh
 ./cleanup-script.sh
 ```
 
+## Method 2
+
+Execute the commands maually
 
 ## Create resources commands
 

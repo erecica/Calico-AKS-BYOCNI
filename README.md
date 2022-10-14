@@ -1,12 +1,38 @@
 # Calico-AKS-BYOCNI
- Install Calico on AKS cluster with Bring Your Own CNI 
+Install Calico on AKS cluster with Bring Your Own CNI 
+
+There are two methods to execute the steps to starup and clean up your AKS installation.
+
+## Method 1
+
+### Clone this reposetory and cd into the folder
+```
+git clone https://github.com/erecica/Calico-AKS-BYOCNI.git && cd Calico-AKS-BYOCNI
+```
+
+### Change execution promissons on the startup and cleanup file!
+```
+chmod +x *.sh
+```
+
+### Setup the cluster and deploy the resources
+
+```
+./start-script.sh
+```
+
+### Cleanup the cluster en remove all the resources
+
+```
+./cleanup-script.sh
+```
 
 
 ## Create resources commands
 
 ### 1. Create a resource group for this workshop
 ``` 
-az group create --name Calico-AKS-Resourcegroup --location  westeurope 
+az group create --name Calico-AKS-Resourcegroup --location $LOCATION
 ```
 
 ### 2. Create AKS cluster with no Kubernetes CNI pre-installed

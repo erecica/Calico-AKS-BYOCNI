@@ -17,21 +17,22 @@ There are two methods to execute the steps to starup and clean up your AKS insta
 ## Method 1
 Clone and execute bash script
 
-### Clone this reposetory and cd into the folder
+### 1. Clone this reposetory and cd into the folder
 ```
 git clone https://github.com/erecica/Calico-AKS-BYOCNI.git && cd Calico-AKS-BYOCNI
 ```
 
-### Change execution promissons on the startup and cleanup file!
+### 2. Change execution promissons on the startup and cleanup file!
 ```
 chmod +x *.sh
 ```
 
-### Setup the cluster and deploy the resources
+### 3. Setup the cluster and deploy the resources
 
 ```
 ./start-script.sh
 ```
+> After about 5-10 min the cluster should be ready and the demo app should be deployed
 
 ### Cleanup the cluster en remove all the resources
 

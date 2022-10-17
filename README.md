@@ -27,13 +27,15 @@ cd Calico-AKS-BYOCNI && chmod +x *.sh && \
 ./start-script.sh
 ```
 > **Note**
-> After about 5-10 min the cluster should be ready and the demo app should be deployed
+> After about 5~10 min the cluster should be ready and the demo app should be deployed
 
 ### Cleanup the cluster en remove all the resources
 
 ```
 ./cleanup-script.sh
 ```
+> **Note**
+> Clean up the cluster might take 3~7 min
 
 ## Method 2
 

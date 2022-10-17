@@ -26,6 +26,7 @@ git clone https://github.com/erecica/Calico-AKS-BYOCNI.git && \
 cd Calico-AKS-BYOCNI && chmod +x *.sh && \
 ./start-script.sh
 ```
+> **Note**
 > After about 5-10 min the cluster should be ready and the demo app should be deployed
 
 ### Cleanup the cluster en remove all the resources

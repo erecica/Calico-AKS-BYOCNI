@@ -19,7 +19,9 @@ Clone and execute bash script
 
 ### 1. Clone this reposetory, cd into the folder, change execution promissons, setup the cluster and deploy the resources
 ```
-git clone https://github.com/erecica/Calico-AKS-BYOCNI.git && cd Calico-AKS-BYOCNI && chmod +x *.sh && ./start-script.sh
+git clone https://github.com/erecica/Calico-AKS-BYOCNI.git && \ 
+cd Calico-AKS-BYOCNI && chmod +x *.sh && \
+./start-script.sh
 ```
 > After about 5-10 min the cluster should be ready and the demo app should be deployed
 

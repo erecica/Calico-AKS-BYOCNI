@@ -35,7 +35,7 @@ cd Calico-AKS-BYOCNI && chmod +x *.sh && \
 ./cleanup-script.sh
 ```
 > **Note**
-> Clean up the cluster might take 3~7 min
+> Cleaning up the cluster might take 3~7 min
 
 ## Method 2
 

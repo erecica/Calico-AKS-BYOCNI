@@ -99,7 +99,7 @@ kubectl apply -f ./yoabank-loadbalancer.yaml
 kubectl get svc -n yaobank-customer yaobank-customer
 ```
 
-> Note: It might take 1-2 minutes for the loadbalancer service to acquire an external IP address
+> Note: It might take 1-2 minutes for the loadbalancer service to acquire an external IP address. Once the external IP is vissable, you should be able to visit the demo app with your breowser.
 
 ##  Clean up
 

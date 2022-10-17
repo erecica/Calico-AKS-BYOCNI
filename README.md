@@ -14,6 +14,9 @@ This reposetory is setup for a Workshop purpuse and demsotrates how to install C
 
 There are two methods to execute the steps to starup and clean up your AKS installation.
 
+> **Warning**
+> Microsoft will charge you a small fee when executing this demo! We strongly recomend to clean up the cluster after this demo! Clean up steps are included in this demo.
+
 ## Method 1
 Clone and execute bash script
 

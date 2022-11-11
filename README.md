@@ -12,10 +12,21 @@ More information about [Tigera Calico website](https://www.tigera.io/tigera-prod
 
 This reposetory is setup for a Workshop purpuse and demsotrates how to install Calico on Azure [AKS with Bring Your Own CNI](https://learn.microsoft.com/en-us/azure/aks/use-byo-cni) setup. 
 
-There are two methods to execute the steps to starup and clean up your AKS installation.
 
 > **Warning**
 > Microsoft will charge you a small fee when executing this demo! We strongly recomend to clean up the cluster after this demo! Clean up steps are included in this demo.
+
+## Cloud shell
+All cammands for this extersise are executed into Azure Cloud shell. Azure Cloud Shell requires an Azure file share to persist files. Create one if requested. 
+
+### Open cloud shell
+![alt text](./azure-portal-cloud-shell.png "Azure Cloud Shell")
+
+### Create a new storage account 
+![alt text](./azure-portal-storage-account.png "Azure Cloud Shell")
+
+
+There are two methods to execute the steps to starup and clean up your AKS installation.
 
 ## Method 1
 Clone and execute bash script

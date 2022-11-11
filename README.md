@@ -38,7 +38,7 @@ Let's set a environment variable for the location we will use to start the resou
 ```az account list-locations -o table```
 
 ### Set location
-```location='name of your location'```
+```az configure --defaults location='name of your location'```
 
 
 ## Workshop

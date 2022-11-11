@@ -25,6 +25,7 @@ All cammands for this extersise are executed into Azure Cloud shell. Azure Cloud
 ### Create a new storage account 
 ![alt text](./azure-portal-storage-account.png "Azure Cloud Shell")
 
+## Workshop
 
 There are two methods to execute the steps to starup and clean up your AKS installation.
 

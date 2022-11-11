@@ -1,1 +1,1 @@
-GlobalNetworkPolicy
+# GlobalNetworkPolicy

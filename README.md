@@ -41,6 +41,9 @@ az account list-locations -o table
 ```
 
 ### Set default location
+
+Replace {name of your location} with the location where your current storage account is located.
+
 ```bash
 az configure --defaults location={name of your location}
 ```

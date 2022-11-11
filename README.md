@@ -30,6 +30,17 @@ All cammands for this extersise are executed into Azure Cloud shell. Azure Cloud
 ### Create a new storage account 
 ![alt text](./azure-portal-storage-account.png "Azure Cloud Shell")
 
+
+Let's set a environment variable for the location we will use to start the resources.
+
+### List available locations
+
+```az account list-locations -o table```
+
+### Set location
+```location='name of your location'```
+
+
 ## Workshop
 
 There are two methods to execute the steps to starup and clean up your AKS installation.
@@ -68,7 +79,7 @@ az group create --name Calico-AKS-Resourcegroup --location $LOCATION
 ### 2. Create AKS cluster with no Kubernetes CNI pre-installed
 
 ```
-az aks create --resource-group Calico-AKS-Resourcegroup --name Calico-AKS-Workshop --location westeurope --pod-cidr 192.168.0.0/16 --network-plugin none --generate-ssh-keys
+az aks create --resource-group Calico-AKS-Resourcegroup --name Calico-AKS-Workshop --location $location --pod-cidr 192.168.0.0/16 --network-plugin none --generate-ssh-keys
 ```
 > Note: It might take about 6-9 min 
 

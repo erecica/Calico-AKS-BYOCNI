@@ -34,14 +34,15 @@ All cammands for this extersise are executed into Azure Cloud shell. Azure Cloud
 Let's set a environment variable for the location we will use to start the resources.
 
 ### List available locations
+To see all possible locations enter the following:
 
-```
+```bash
 az account list-locations -o table
 ```
 
 ### Set default location
-```
-az configure --defaults location='name of your location'
+```bash
+az configure --defaults location={name of your location}
 ```
 
 
@@ -53,7 +54,7 @@ There are two methods to execute the steps to starup and clean up your AKS insta
 Clone and execute bash script
 
 ### 1. Clone this reposetory, cd into the folder, change execution promissons, setup the cluster and deploy the resources
-```
+```bash
 git clone https://github.com/erecica/Calico-AKS-BYOCNI.git && \ 
 cd Calico-AKS-BYOCNI && chmod +x *.sh && \
 ./start-script.sh
@@ -63,7 +64,7 @@ cd Calico-AKS-BYOCNI && chmod +x *.sh && \
 
 ### Cleanup the cluster en remove all the resources
 
-```
+```bash
 ./cleanup-script.sh
 ```
 > **Note**
@@ -76,56 +77,57 @@ Execute the commands maually
 ## Create resources commands
 
 ### 1. Create a resource group for this workshop
-``` 
-az group create --name Calico-AKS-Resourcegroup --location $LOCATION
+
+```bash
+az group create --name Calico-AKS-Resourcegroup
 ```
 
 ### 2. Create AKS cluster with no Kubernetes CNI pre-installed
 
-```
-az aks create --resource-group Calico-AKS-Resourcegroup --name Calico-AKS-Workshop --location $location --pod-cidr 192.168.0.0/16 --network-plugin none --generate-ssh-keys
+```bash
+az aks create --resource-group Calico-AKS-Resourcegroup --name Calico-AKS-Workshop --pod-cidr 192.168.0.0/16 --network-plugin none --generate-ssh-keys
 ```
 > Note: It might take about 6-9 min 
 
 ### 3. Get credentials to allow you to access the cluster with kubectl
 
-```
+```bash
 az aks get-credentials --resource-group Calico-AKS-Resourcegroup --name Calico-AKS-Workshop
 ```
 
 ### 4. Install the operator
 
-```
+```bash
 kubectl create -f ./tigera-operator.yaml
 ```
 
 ### 5. Configure the Calico installation
 
-```
+```bash
 kubectl create -f ./tigera-operator-installation.yaml
 ```
 
 ### 6. Deploying YAOBank 
 
-```
+```bash
 kubectl apply -f ./yaobank-org.yaml
 ```
 
 ### 7. Verify our deployment
 
-```
+```bash
 kubectl get deployments -A | egrep yao
 ```
 
 ### 8. Deploying a Load Balancer
 
-```
+```bash
 kubectl apply -f ./yoabank-loadbalancer.yaml
 ```
 
 ### 9. Verify the service deployment
 
-```
+```bash
 kubectl get svc -n yaobank-customer yaobank-customer
 ```
 
@@ -135,7 +137,7 @@ kubectl get svc -n yaobank-customer yaobank-customer
 
 ### 1. Removing the AKS Cluster
 
-```
+```bash
 az aks delete --name Calico-AKS-Workshop --resource-group Calico-AKS-Resourcegroup -y 
 ```
 > Note: It might take 3-6 minutes to delete the cluster
@@ -143,13 +145,13 @@ az aks delete --name Calico-AKS-Workshop --resource-group Calico-AKS-Resourcegro
 
 ### 2. Removing the Azure Resource Group
 
-```
+```bash
 az group delete --resource-group Calico-AKS-Resourcegroup -y
 ```
 
 ### 3. Removing the AKS Kubeconfig Entries
 
-```
+```bash
 kubectl config delete-cluster Calico-AKS-Workshop
 kubectl config delete-context Calico-AKS-Workshop
 kubectl config delete-user clusterUser_Calico-AKS-Resourcegroup_Calico-AKS-Workshop
@@ -158,7 +160,7 @@ kubectl config delete-user clusterUser_Calico-AKS-Resourcegroup_Calico-AKS-Works
 
 ### 4. Deleting the Cloud Shell Instance
 
-```
+```bash
 clouddrive unmount
 ```
 > You will be prompted to confirm twice.

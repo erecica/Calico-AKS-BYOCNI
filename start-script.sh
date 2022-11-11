@@ -1,4 +1,4 @@
-az group create --name Calico-AKS-Resourcegroup --location  $location --debug && \
+az group create --name Calico-AKS-Resourcegroup --location $location --debug && \
 echo "Resourcegroup created. Sleep for 5 sec" && \
 sleep 5 && \ 
 az aks create --resource-group Calico-AKS-Resourcegroup --name Calico-AKS-Workshop --location $location --pod-cidr 192.168.0.0/16 --network-plugin none --generate-ssh-keys --debug && \

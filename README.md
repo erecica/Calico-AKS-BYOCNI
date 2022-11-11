@@ -13,6 +13,11 @@ More information about [Tigera Calico website](https://www.tigera.io/tigera-prod
 This reposetory is setup for a Workshop purpuse and demsotrates how to install Calico on Azure [AKS with Bring Your Own CNI](https://learn.microsoft.com/en-us/azure/aks/use-byo-cni) setup. 
 
 
+## Required for this workshop
+
+You need an Azure Account with payment Subscription to execute this workshop
+
+
 > **Warning**
 > Microsoft will charge you a small fee when executing this demo! We strongly recomend to clean up the cluster after this demo! Clean up steps are included in this demo.
 

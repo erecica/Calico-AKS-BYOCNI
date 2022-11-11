@@ -37,7 +37,7 @@ Let's set a environment variable for the location we will use to start the resou
 
 ```az account list-locations -o table```
 
-### Set location
+### Set default location
 ```az configure --defaults location='name of your location'```
 
 

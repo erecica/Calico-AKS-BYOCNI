@@ -1,0 +1,41 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: p-external2customer
+  namespace: yaobank-customer
+spec:
+  selector: app == "customer"
+  ingress:
+  - action: Allow
+    protocol: TCP
+    destination:
+      selector: app == "customer"
+  egress:
+  - action: Allow
+    protocol: TCP
+    destination: 
+      serviceAccounts:
+        names:
+          - summary
+      namespaceSelector: ns == "summary"
+---
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: p-customer2summary
+  namespace: yaobank-summary
+spec:
+  selector: app == "summary"
+  ingress:
+  - action: Allow
+    protocol: TCP
+    destination:
+      selector: app == "summary"
+      ports:
+      - 80
+  egress:
+  - action: Allow
+    protocol: TCP
+    destination:
+      selector: app == "database"
+      namespaceSelector: projectcalico.org/name == "yaobank-database"

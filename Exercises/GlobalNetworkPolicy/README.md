@@ -25,5 +25,14 @@ Response should be:
 Use the following command to establish isolation.
 
 ```
-kubectl apply -f ./default-app-policy.yaml
+kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/GlobalNetworkPolicy/default-app-policy.yaml
+```
+
+## Security Policies
+In addition to the GlobalNetworkPolicy resource, Calico also offers a NetworkPolicy resource that can be applied to namespaces individually. 
+
+Use the following command to add the required rules.
+
+```
+kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/GlobalNetworkPolicy/networkpolicy.yaml
 ```

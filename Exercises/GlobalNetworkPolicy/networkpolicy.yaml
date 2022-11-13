@@ -1,3 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: p-summary2database
+  namespace: yaobank-database
+spec:
+  podSelector:
+    matchLabels:
+      app: database
+  ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            ns: summary
+      - podSelector:
+          matchLabels:
+            app: summary
+  egress:
+    - to:
+      - namespaceSelector:
+          matchLabels:
+            ns: summary
+      - podSelector:
+          matchLabels:
+            app: summary
+---
 apiVersion: projectcalico.org/v3
 kind: NetworkPolicy
 metadata:

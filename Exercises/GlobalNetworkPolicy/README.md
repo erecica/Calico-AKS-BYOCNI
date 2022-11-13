@@ -1,6 +1,5 @@
 # GlobalNetworkPolicy
 
-## Security Objectives
 The following picture is a visual representation of YAOBank application tiers.
 
 ![alt text](./yaobank-architecture.png "YAOBank")

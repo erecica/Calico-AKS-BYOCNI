@@ -16,6 +16,14 @@ First, let's verify if the customer pod can access the database directly.
 Use the following command to access the database from one of the customer pods. 
 
 ```bash
+kubectl exec -it -n yaobank-customer deployments/customer -- curl --connect-timeout 5 http://database.yaobank-database:2379/v2/keys?recursive=true | python -m json.tool
+```
+
+You should get a valid JSON response.
+
+Let’s do the connectivity test again, but this time we are trying to access an external URL from a different namespace that is not explicitly denied.
+
+```bash
 kubectl exec -it -n yaobank-customer deployments/customer --  curl --connect-timeout 10 -LIs https://www.google.com/ | egrep HTTP
 ```
 Response should be:

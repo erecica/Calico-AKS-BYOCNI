@@ -16,7 +16,7 @@ First, let's verify if the customer pod can access the database directly.
 Use the following command to access the database from one of the customer pods. 
 
 ```bash
-kubectl exec -it -n yaobank-customer deployments/customer --  curl --connect-timeout 10 -LIs https://projectcalico.docs.tigera.io/ | egrep HTTP
+kubectl exec -it -n yaobank-customer deployments/customer --  curl --connect-timeout 10 -LIs https://www.google.com/ | egrep HTTP
 ```
 Response should be:
 ``` HTTP/2 200  ```

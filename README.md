@@ -19,7 +19,8 @@ You need an Azure Account with payment Subscription to execute this workshop
 
 
 > **Warning**
-> Microsoft will charge you a small fee when executing this demo! We strongly recomend to clean up the cluster after this demo! Clean up steps are included in this demo.
+> Microsoft will charge you a small fee when executing this demo (3 instances of type 
+Standard_DS2_v2 used)! We strongly recomend to clean up the cluster after this demo! Clean up steps are included in this demo.
 
 ## Cloud shell
 All cammands for this extersise are executed into Azure Cloud shell. Azure Cloud Shell requires an Azure file share to persist files. Create one if requested. 

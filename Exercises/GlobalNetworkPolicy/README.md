@@ -15,7 +15,7 @@ First, let's verify if the customer pod can access the database directly.
 
 Use the following command to access the database from one of the customer pods. 
 
-```
+```bash
 kubectl exec -it -n yaobank-customer deployments/customer --  curl --connect-timeout 10 -LIs https://projectcalico.docs.tigera.io/ | egrep HTTP
 ```
 Response should be:
@@ -23,7 +23,7 @@ Response should be:
 
 Use the following command to establish isolation.
 
-```
+```bash
 kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/GlobalNetworkPolicy/default-app-policy.yaml
 ```
 
@@ -32,6 +32,6 @@ In addition to the GlobalNetworkPolicy resource, Calico also offers a NetworkPol
 
 Use the following command to add the required rules.
 
-```
+```bash
 kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/GlobalNetworkPolicy/networkpolicy.yaml
 ```

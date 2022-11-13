@@ -43,3 +43,14 @@ Use the following command to add the required rules.
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/GlobalNetworkPolicy/networkpolicy.yaml
 ```
+
+Let’s do the connectivity tests again. Now we shouldn't be able to connect to the external address or to the database pod from the customer pods.
+
+```bash
+kubectl exec -it -n yaobank-customer deployments/customer --  curl --connect-timeout 10 -LIs https://www.google.com/ | egrep HTTP
+```
+
+```bash
+kubectl exec -it -n yaobank-customer deployments/customer -- curl --connect-timeout 5 http://database.yaobank-database:2379/v2/keys?recursive=true | python -m json.tool
+```
+

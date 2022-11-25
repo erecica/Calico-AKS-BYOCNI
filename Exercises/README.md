@@ -22,9 +22,18 @@ Get deployments
 ```
 kubectl get deployments -A
 ```
+>Add -w to watch (tail) the view
 
 Get deployments | matching STRING
 
 ```
 kubectl get deployments -A | egrep <STRING> 
+```
+
+
+
+Scale deployment
+
+```
+kubectl scale --replicas=n deployments/<NAME> -n <NAMESPACE>
 ```

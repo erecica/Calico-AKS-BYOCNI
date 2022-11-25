@@ -17,6 +17,8 @@ kubectl explain <RESOURCE>
 ```
 > Possible resource types include: pods (po), services (svc), replicationcontrollers (rc), nodes (no), events (ev), componentstatuses (cs), limitranges (limits), persistentvolumes (pv), persistentvolumeclaims (pvc), resourcequotas (quota), namespaces (ns), horizontalpodautoscalers (hpa) or endpoints (ep).
 
+Get <RESOURCE> performence info 
+
 Get deployments
 
 ```

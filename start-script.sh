@@ -1,23 +1,25 @@
+WCO='\033[0;32m' # With color
+NC='\033[0m' # No Color
+
 az group create --name Calico-AKS-Resourcegroup --debug && \
-echo "Resourcegroup created. Sleep for 5 sec" && \
+echo "${WCO}Resourcegroup created.\nMoving to the next step${NC}" && \
 sleep 5 && \ 
 az aks create --resource-group Calico-AKS-Resourcegroup --name Calico-AKS-Workshop --pod-cidr 192.168.0.0/16 --network-plugin none --generate-ssh-keys --debug && \
-echo "AKS without network-plugin created. Sleep for 5 sec" && \
+echo "${WCO}AKS without network-plugin created.\nThis might take 6-9 minutes${NC}" && \
 sleep 5 && \
 az aks get-credentials --resource-group Calico-AKS-Resourcegroup --name Calico-AKS-Workshop --debug && \
-echo "Get AKS credentials. Sleep for 5 sec" && \
+echo "${WCO}Get AKS credentials.${NC}" && \
 sleep 5 && \
 kubectl create -f ./tigera-operator.yaml && \
-echo "Create operator. Sleep for 5 sec" && \
+echo "${WCO}Create operator.\nOne moment please...${NC}" && \
 sleep 5 && \
 kubectl create -f ./tigera-operator-installation.yaml && \
-echo "Install operator. Sleep for 5 sec" && \
+echo "${WCO}Install operator.\nOne moment please...${NC}" && \
 sleep 5 && \
 kubectl apply -f ./yaobank-org.yaml && \
-echo "Deploy YOABank app. Sleep for 5 sec" && \
+echo "${WCO}Deploy YOABank app. Sleep for 5 sec${NC}" && \
 sleep 5 && \
 kubectl apply -f ./yoabank-loadbalancer.yaml && \
-echo "Deploy Loadbalancer. Waiting for External IP..." && \
+echo "${WCO}Deploy Loadbalancer. Waiting for External IP...${NC}" && \
 sleep 5 && \
 watch kubectl get svc -n yaobank-customer yaobank-customer
-#kubectl get svc -n yaobank-customer yaobank-customer -w --output jsonpath='{.status.loadBalancer.ingress[0].ip}'

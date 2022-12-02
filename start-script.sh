@@ -18,5 +18,5 @@ echo "Deploy YOABank app. Sleep for 5 sec" && \
 sleep 5 && \
 kubectl apply -f ./yoabank-loadbalancer.yaml && \
 echo "Deploy Loadbalancer. Waiting for External IP..." && \
-sleep 30 && \
-kubectl get svc -n yaobank-customer yaobank-customer --output jsonpath='{.status.loadBalancer.ingress[0].ip}'
+sleep 15 && \
+kubectl get svc -n yaobank-customer yaobank-customer -w --output jsonpath='{"Visit YAO Bank with this url: http://"}{.status.loadBalancer.ingress[0].ip}{"\n"}'

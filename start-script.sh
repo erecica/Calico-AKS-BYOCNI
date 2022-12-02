@@ -19,4 +19,5 @@ sleep 5 && \
 kubectl apply -f ./yoabank-loadbalancer.yaml && \
 echo "Deploy Loadbalancer. Waiting for External IP..." && \
 sleep 5 && \
-kubectl get svc -n yaobank-customer yaobank-customer -w --output jsonpath='{.status.loadBalancer.ingress[0].ip}'
+watch kubectl get svc -n yaobank-customer yaobank-customer
+#kubectl get svc -n yaobank-customer yaobank-customer -w --output jsonpath='{.status.loadBalancer.ingress[0].ip}'

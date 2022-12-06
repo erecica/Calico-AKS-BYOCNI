@@ -112,6 +112,7 @@ az aks get-credentials --resource-group Calico-AKS-Resourcegroup --name Calico-A
 ```bash
 kubectl create -f ./tigera-operator.yaml
 ```
+> The Tigera Operator manages the lifecycle of a Calico or Calico Enterprise installation on Kubernetes. Its goal is to make installation, upgrades, and ongoing lifecycle management of Calico and Calico Enterprise as simple and reliable as possible.
 
 ### 5. Configure the Calico installation
 

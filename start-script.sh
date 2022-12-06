@@ -14,8 +14,8 @@ kubectl create -f ./tigera-operator-installation.yaml && \
 echo "Install operator. One moment please..." && \
 sleep 5 && \
 kubectl apply -f ./yaobank-org.yaml && \
-echo "Deploy YOABank app. Sleep for 5 sec" && \
-sleep 5 && \
+echo "Deploy YOABank app. One moment please..." && \
+sleep 45 && \
 kubectl apply -f ./yoabank-loadbalancer.yaml && \
 echo "Deploy Loadbalancer. Waiting for External IP..." && \
 sleep 5 && \

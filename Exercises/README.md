@@ -44,3 +44,9 @@ Scale deployment
 ```
 kubectl scale --replicas=n deployments/<NAME> -n <NAMESPACE>
 ```
+
+Scale deployment customer to 50 pods and follow the deployment
+
+```
+kubectl scale --replicas=50 deployments/customer -n yaobank-customer && kubectl get -w deployments -A | egrep yao
+```

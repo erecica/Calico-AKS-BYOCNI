@@ -60,7 +60,8 @@ Clone and execute bash script
 ### 1. Clone this reposetory, cd into the folder, change execution promissons, setup the cluster and deploy the resources
 ```bash
 git clone https://github.com/erecica/Calico-AKS-BYOCNI.git && \ 
-cd Calico-AKS-BYOCNI && chmod +x *.sh && \
+cd Calico-AKS-BYOCNI && \
+chmod +x *.sh && \
 ./start-script.sh
 ```
 > **Note**
@@ -77,6 +78,13 @@ cd Calico-AKS-BYOCNI && chmod +x *.sh && \
 ## Method 2
 
 Execute the commands maually
+
+Let's first clone the repository, so all the files are locally available.
+
+```
+git clone https://github.com/erecica/Calico-AKS-BYOCNI.git && \ 
+cd Calico-AKS-BYOCNI
+```
 
 ## Create resources commands
 

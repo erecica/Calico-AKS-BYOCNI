@@ -32,7 +32,7 @@ Response should be:
 Use the following command to establish isolation.
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/GlobalNetworkPolicy/default-app-policy.yaml
+kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/02-GlobalNetworkPolicy/default-app-policy.yaml
 ```
 
 ## Security Policies
@@ -41,7 +41,7 @@ In addition to the GlobalNetworkPolicy resource, Calico also offers a NetworkPol
 Use the following command to add the required rules.
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/GlobalNetworkPolicy/networkpolicy.yaml
+kubectl apply -f https://raw.githubusercontent.com/erecica/Calico-AKS-BYOCNI/main/Exercises/02-GlobalNetworkPolicy/networkpolicy.yaml
 ```
 
 Let’s do the connectivity tests again. Now we shouldn't be able to connect to the external address or to the database pod from the customer pods.

@@ -5,9 +5,35 @@ Get config
 kubectl config view
 ```
 
-Get nodes
+List nodes
 ```
-kubectl get nodes
+kubectl get nodes -o wide
+```
+
+List pods
+```
+kubectl get pods -A
+```
+
+List namespces
+
+```
+kubectl get ns
+```
+
+
+
+List deployments
+
+```
+kubectl get deployments -A
+```
+>Add -w  after get to watch (tail) the view
+
+List deployments | matching STRING
+
+```
+kubectl get deployments -A | egrep <STRING> 
 ```
 
 Explain resource
@@ -23,22 +49,6 @@ Get RESOURCE performence info
 kubectl top <RESOURCE>
 ```
 
-
-Get deployments
-
-```
-kubectl get deployments -A
-```
->Add -w to watch (tail) the view
-
-Get deployments | matching STRING
-
-```
-kubectl get deployments -A | egrep <STRING> 
-```
-
-
-
 Scale deployment
 
 ```
@@ -49,4 +59,16 @@ Scale deployment customer to 50 pods and follow the deployment
 
 ```
 kubectl scale --replicas=50 deployments/customer -n yaobank-customer && kubectl get -w deployments -A | egrep yao
+```
+
+List all nodes, with more details
+
+```
+kubectl get nodes -o wide
+```
+
+List all namespces
+
+```
+kubectl get ns
 ```
